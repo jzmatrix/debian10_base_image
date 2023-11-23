@@ -25,7 +25,7 @@ jobs:
             TS=`date +%Y%m%d_%H%M`
             echo $TS
             ##
-            docker build --cache-from=app  -t ${IMAGE_REPO}/${IMAGE_NAME}:$TS -t ${IMAGE_REPO}/${IMAGE_NAME}:latest .
+            docker build --cache-from=app  -t ${IMAGE_REPO}/${CIRCLE_PROJECT_REPONAME}:$TS -t ${IMAGE_REPO}/${CIRCLE_PROJECT_REPONAME}:latest .
             ##
-            docker push ${IMAGE_REPO}/${IMAGE_NAME}:$TS
-            docker push ${IMAGE_REPO}/${IMAGE_NAME}:latest
+            docker push ${IMAGE_REPO}/${CIRCLE_PROJECT_REPONAME}:$TS
+            docker push ${IMAGE_REPO}/${CIRCLE_PROJECT_REPONAME}:latest
